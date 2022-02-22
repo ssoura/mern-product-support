@@ -3,7 +3,6 @@ import {
   Flex,
   useColorModeValue,
   useColorMode,
-  Container,
 } from "@chakra-ui/react";
 
 import SideBar from "../components/SideBar";

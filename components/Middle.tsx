@@ -13,7 +13,7 @@ import {
   Table,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { FiCreditCard, FiX } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 import useSWR from "swr";
 
 const Middle = () => {
