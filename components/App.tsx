@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  Flex,
-  useColorModeValue,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Flex, useColorModeValue, useColorMode } from "@chakra-ui/react";
 
 import SideBar from "./SideBar";
 import RightBar from "./RightBar";
@@ -40,7 +36,7 @@ export default function App() {
         justifyContent="center"
         zIndex={100}
       >
-       Lorem ipsum, dolor sit amet consectetur
+        Lorem ipsum, dolor sit amet consectetur
       </Flex>
 
       <Flex
@@ -50,11 +46,11 @@ export default function App() {
         overflow="hidden"
         backgroundColor={bg}
         color={color}
-        pt={'24px'}
+        pt={"24px"}
       >
         <SideBar />
-        <Middle data={data}/>
-        <RightBar data={data}/>
+        <Middle data={data} />
+        <RightBar data={data} />
       </Flex>
     </>
   );

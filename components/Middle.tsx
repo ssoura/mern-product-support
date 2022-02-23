@@ -63,7 +63,7 @@ const Middle = ({ data }: any) => {
         <Flex alignContent="center">
           <Box
             borderRadius="10px"
-            bgImage={'../public/11.png'}
+            bgImage={"../public/11.png"}
             mt={4}
             w={"100%"}
             h="86px"
@@ -113,7 +113,7 @@ const Middle = ({ data }: any) => {
             align="flex-start"
           >
             <Flex flexDir="column" pl={"32px"}>
-              <Text fontSize="l" >Your rewards</Text>
+              <Text fontSize="l">Your rewards</Text>
               <Text fontWeight="bold" fontSize="xl">
                 $ 0.24435345464
               </Text>
@@ -125,42 +125,45 @@ const Middle = ({ data }: any) => {
               verticalAlign={"center"}
               pr={"32px"}
             >
-                      <Button
-          mt={4}
-          bgColor="#3772FF"
-          color="#FFF"
-          py={1}
-          borderRadius={10}
-          px={8}
-          mx={2}
-          >
-          <Text fontSize='s'><LinkIcon/> custom link</Text>
-        </Button>
+              <Button
+                mt={4}
+                bgColor="#3772FF"
+                color="#FFF"
+                py={1}
+                borderRadius={10}
+                px={8}
+                mx={2}
+              >
+                <Text fontSize="s">
+                  <LinkIcon /> custom link
+                </Text>
+              </Button>
             </Flex>
           </Flex>
         </Box>
 
         {/* Row 3 */}
         <Flex
-          p=".5em"
-          color="#fff"
+          // p="1em"
           flexDir="row"
-          h="100%"
-          justify="space-around"
+          // justify="space-between"
           w="100%"
         >
           <Box
-            display="flex"
+            // display="flex"
+            p="1em"
             borderRadius="25px"
             mt={4}
-            mr="0.25em"
+            mr="8px"
             w="100%"
-            h="200px"
+            h="170px"
             backgroundColor="#191b20"
           >
-              
-            <VStack spacing="24px">
-              <Text color="gray.400">xxxxxxxxxx</Text>
+            <VStack spacing="18px" alignItems="start">
+              <Text color="gray.400">
+                {" "}
+                <Avatar size="xs" src="" /> xxxxxxxxxx
+              </Text>
               <Text fontWeight="bold" fontSize="xl">
                 xxxxxxxxxxxxxxxx
               </Text>
@@ -168,32 +171,42 @@ const Middle = ({ data }: any) => {
                 <InputRightElement pointerEvents="none">
                   <CopyIcon color="gray.300" />
                 </InputRightElement>
-                <Input type="tel" value="https://unityexchange.design " />
+                <Input
+                  type="tel"
+                  value="https://unityexchange.design "
+                  h="50px"
+                />
               </InputGroup>
             </VStack>
-              
           </Box>
 
           <Box
+            p="1em"
             borderRadius="25px"
             mt={4}
-            ml="0.25em"
+            ml="8px"
             w="100%"
-            h="200px"
+            h="170px"
             backgroundColor="#191b20"
-            display="flex"
+            // display="flex"
           >
-            <VStack spacing="24px">
-              <Text color="gray.400">xxxxxxxxxxxxxxxxxxxx</Text>
+            <VStack spacing="18px" alignItems="start">
+              <Text color="gray.400">
+                <Avatar size="xs" src="" /> xxxxxxxxxxx
+              </Text>
               <Text fontWeight="bold" fontSize="xl">
-                xxxxxxxxxxxxxxxxedfefefefe
+                xxxxxxxxxxxxxxx
               </Text>
 
               <InputGroup>
                 <InputRightElement pointerEvents="none">
                   <CopyIcon color="gray.300" />
                 </InputRightElement>
-                <Input type="tel" value="https://unityexchange.design " />
+                <Input
+                  type="tel"
+                  value="https://unityexchange.design "
+                  h="50px"
+                />
               </InputGroup>
             </VStack>
           </Box>
