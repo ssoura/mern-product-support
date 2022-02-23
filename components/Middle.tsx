@@ -1,3 +1,4 @@
+import { CopyIcon, LinkIcon } from "@chakra-ui/icons";
 import {
   Text,
   Box,
@@ -11,23 +12,19 @@ import {
   Td,
   Thead,
   Table,
+  InputGroup,
+  Input,
+  InputRightElement,
+  VStack,
+  Button,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { FiX } from "react-icons/fi";
-import useSWR from "swr";
 
-const Middle = () => {
-  const address = `https://raw.githubusercontent.com/akshita151199/APIs/main/data`;
-  const fetcher = async (url: string) =>
-    await axios.get(url).then((res) => res.data);
-  const { data, error } = useSWR(address, fetcher);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+const Middle = ({ data }: any) => {
   return (
     <>
       <Flex
-        w={["100%", "100%", "80%"]}
+        w={["70%"]}
         p="3%"
         flexDir="column"
         overflow="auto"
@@ -62,14 +59,15 @@ const Middle = () => {
         <Heading fontWeight="normal" mb={4} letterSpacing="tight">
           Section
         </Heading>
-        {/* First Column Box */}
+        {/* Row 1 */}
         <Flex alignContent="center">
           <Box
             borderRadius="10px"
+            bgImage={'../public/11.png'}
             mt={4}
             w={"100%"}
             h="86px"
-            bgGradient="linear(to-t, #abe8ff, #abe8ff)"
+            bgColor="#abe8ff"
           >
             <Flex p="1rem" color="#222" flexDir="column" h="100%">
               <Text mb={2}>
@@ -89,14 +87,14 @@ const Middle = () => {
             justify="center"
             ml="-3"
             mt="-2"
-            zIndex="100"
+            zIndex="99"
             fontSize="s"
           >
             <Icon as={FiX} />
           </Flex>
         </Flex>
 
-        {/* Second Column Box */}
+        {/* Row 2 */}
 
         <Box
           borderRadius="25px"
@@ -115,9 +113,9 @@ const Middle = () => {
             align="flex-start"
           >
             <Flex flexDir="column" pl={"32px"}>
-              <Text color="gray.400">xxxxxxxxxxxx</Text>
+              <Text fontSize="l" >Your rewards</Text>
               <Text fontWeight="bold" fontSize="xl">
-                xxxxxxxxxxxxxxxxx
+                $ 0.24435345464
               </Text>
               <Text mb={4}>xxxxxxxxxxxxxxxxxxxxxxxxx</Text>
             </Flex>
@@ -127,13 +125,22 @@ const Middle = () => {
               verticalAlign={"center"}
               pr={"32px"}
             >
-
-              <Text>xxxxxxxxxxxx</Text>
+                      <Button
+          mt={4}
+          bgColor="#3772FF"
+          color="#FFF"
+          py={1}
+          borderRadius={10}
+          px={8}
+          mx={2}
+          >
+          <Text fontSize='s'><LinkIcon/> custom link</Text>
+        </Button>
             </Flex>
           </Flex>
         </Box>
 
-        {/* 3rd Column Boxes */}
+        {/* Row 3 */}
         <Flex
           p=".5em"
           color="#fff"
@@ -143,33 +150,28 @@ const Middle = () => {
           w="100%"
         >
           <Box
+            display="flex"
             borderRadius="25px"
             mt={4}
             mr="0.25em"
             w="100%"
             h="200px"
             backgroundColor="#191b20"
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
           >
-            <Flex
-              p="1em"
-              color="#fff"
-              flexDir="column"
-              h="100%"
-              justify="space-between"
-            >
-              <Flex justify="space-between" w="100%" align="flex-start">
-                <Flex flexDir="column">
-                  <Text color="gray.400">xxxxxxxxxxxxxxxxxxxx</Text>
-                  <Text fontWeight="bold" fontSize="xl">
-                    xxxxxxxxxxxxxxxx
-                  </Text>
-                </Flex>
-              </Flex>
-              <Text mb={4}></Text>
-            </Flex>
+              
+            <VStack spacing="24px">
+              <Text color="gray.400">xxxxxxxxxx</Text>
+              <Text fontWeight="bold" fontSize="xl">
+                xxxxxxxxxxxxxxxx
+              </Text>
+              <InputGroup>
+                <InputRightElement pointerEvents="none">
+                  <CopyIcon color="gray.300" />
+                </InputRightElement>
+                <Input type="tel" value="https://unityexchange.design " />
+              </InputGroup>
+            </VStack>
+              
           </Box>
 
           <Box
@@ -180,45 +182,42 @@ const Middle = () => {
             h="200px"
             backgroundColor="#191b20"
             display="flex"
-            alignItems="center"
-            justifyContent="space-between"
           >
-            <Flex
-              p="1em"
-              color="#fff"
-              flexDir="column"
-              h="100%"
-              justify="space-between"
-            >
-              <Flex justify="space-between" w="100%" align="flex-start">
-                <Flex flexDir="column">
-                  <Text color="gray.400">xxxxxxxxxxxxxxxxxxxxxxx</Text>
-                  <Text fontWeight="bold" fontSize="xl">
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                  </Text>
-                </Flex>
-              </Flex>
-            </Flex>
+            <VStack spacing="24px">
+              <Text color="gray.400">xxxxxxxxxxxxxxxxxxxx</Text>
+              <Text fontWeight="bold" fontSize="xl">
+                xxxxxxxxxxxxxxxxedfefefefe
+              </Text>
+
+              <InputGroup>
+                <InputRightElement pointerEvents="none">
+                  <CopyIcon color="gray.300" />
+                </InputRightElement>
+                <Input type="tel" value="https://unityexchange.design " />
+              </InputGroup>
+            </VStack>
           </Box>
         </Flex>
+
+        {/* Table */}
 
         <Flex justifyContent="space-between" mt={8}>
           <Flex align="flex-end">{/* TODO */}</Flex>
         </Flex>
         <Flex flexDir="column">
           <Flex overflow="auto">
-                <Table  variant="simple" size="sm" mt={4}>
-                  <Thead m={2}>
-                    <Tr>
-                      <Th>Name of transaction</Th>
-                      <Th>Category</Th>
-                      <Th>Cashback</Th>
-                      <Th isNumeric>Amount</Th>
-                    </Tr>
-                  </Thead>
-                  <Tbody m={2}>
-            {data &&
-              data.data.map((item: any) => (
+            <Table variant="simple" size="sm" mt={4}>
+              <Thead m={2}>
+                <Tr>
+                  <Th>Name of transaction</Th>
+                  <Th>Category</Th>
+                  <Th>Cashback</Th>
+                  <Th isNumeric>Amount</Th>
+                </Tr>
+              </Thead>
+              <Tbody m={2}>
+                {data &&
+                  data.data.map((item: any) => (
                     <Tr key={item.user}>
                       <Td>
                         <Flex align="center" flexDir="row">
@@ -260,9 +259,9 @@ const Middle = () => {
                       </Td>
                       <Td isNumeric>{item.referral_earnings}</Td>
                     </Tr>
-                      ))}
-                  </Tbody>
-                </Table>
+                  ))}
+              </Tbody>
+            </Table>
           </Flex>
         </Flex>
       </Flex>

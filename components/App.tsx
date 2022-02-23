@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Flex,
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
 
-import SideBar from "../components/SideBar";
-import RightBar from "../components/RightBar";
+import SideBar from "./SideBar";
+import RightBar from "./RightBar";
 
 import axios from "axios";
 import useSWR from "swr";
-import Middle from "../components/Middle";
+import Middle from "./Middle";
 
-export default function Dashboard() {
+export default function App() {
   const [display, changeDisplay] = useState("hide");
   const [value, changeValue] = useState(1);
 
@@ -26,8 +26,8 @@ export default function Dashboard() {
     await axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(address, fetcher);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  // if (error) return <div>Failed to load</div>;
+  // if (!data) return <div>Loading...</div>;
 
   return (
     <>
@@ -38,8 +38,9 @@ export default function Dashboard() {
         backgroundColor="#3772ff"
         color="#fff"
         justifyContent="center"
+        zIndex={100}
       >
-        rgrdhyrtjutf
+       Lorem ipsum, dolor sit amet consectetur
       </Flex>
 
       <Flex
@@ -49,10 +50,11 @@ export default function Dashboard() {
         overflow="hidden"
         backgroundColor={bg}
         color={color}
+        pt={'24px'}
       >
         <SideBar />
-        <Middle />
-        <RightBar />
+        <Middle data={data}/>
+        <RightBar data={data}/>
       </Flex>
     </>
   );

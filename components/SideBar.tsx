@@ -2,13 +2,9 @@ import {
   Avatar,
   Flex,
   Heading,
-  Icon,
-  Link,
   Spacer,
-  Text,
 } from "@chakra-ui/react";
 import {
-  FiBox,
   FiBriefcase,
   FiCalendar,
   FiDollarSign,
@@ -24,7 +20,12 @@ import ThemeToggle from "./ThemeToggle";
 
 const SideBar = () => {
   return (
-    <Flex w={["100%", "50%%", "18%"]} flexDir="column" alignItems="center">
+    <Flex 
+    flexDir="column" 
+    alignItems="center"
+    minW={["220px"]}
+    
+    >
       <Flex
         flexDir="column"
         // h={"100%"}
@@ -34,14 +35,13 @@ const SideBar = () => {
           <Flex
             flexDir="row"
             mt={50}
-            // mb={[25, 50, 100]}
           >
-            <Flex>
-              <Avatar src="avatar-2.jpg" />
+            <Flex mr='8px'>
+              <Avatar size='md' bg='blue.500' textColor='white' name='Name'/>
             </Flex>
             <Flex>
               <Heading
-                fontSize={["3xl", "3xl", "1xl", "2xl", "3xl"]}
+                fontSize={["3xl"]}
                 alignSelf="center"
                 letterSpacing="tight"
               >
@@ -54,11 +54,11 @@ const SideBar = () => {
 
       <Flex
         flexDir="column"
-        w="90%"
+        w="80%"
         alignItems={"flex-start"}
         as="nav"
         pt={4}
-        ml={"4px"}
+        ml={"12px"}
       >
         <NavItem icon={FiHome} title="Home" />
         <NavItem icon={FiCalendar} title="Section 1" />
@@ -70,12 +70,10 @@ const SideBar = () => {
         <NavItem icon={FiSettings} title="Section 7" />
         <NavItem icon={FiSettings} title="Section 8" />
       </Flex>
-
-      <Flex p="2%" flexDir="column" w="100%" mb={4}>
-        <Flex flexDir={"row"} ml={4} display="flex"></Flex>
-        <Flex direction={"row"} justify={"space-evenly"} mx={"20%"}>
+      <Spacer/>
+      <Flex p="2%" flexDir="column" w="100%" mb={4} >
+        <Flex direction={"row"} justifyContent='flex-start' mx={"20%"} gap='8px'>
           <FiGlobe />
-          <Spacer />
           <ThemeToggle />
         </Flex>
       </Flex>

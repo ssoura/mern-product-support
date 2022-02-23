@@ -1,25 +1,26 @@
+import { ArrowBackIcon, LinkIcon } from "@chakra-ui/icons";
 import { Text, Button, Flex, InputGroup, Input, useColorModeValue, Select } from "@chakra-ui/react";
 
-const RightBar = (props: any) => {
+const RightBar = ({data}: any) => {
   return (
 
       <Flex
-      w={["100%", "100%","65%", "30%"]}
-      p="3%"
+      w={["30%"]}
+      p="2%"
       flexDir="column"
       overflow="auto"
-      minW={["80px", "150px", "300px"]}
+      minW={["300px"]}
     >
 
         <Flex flexDir={"row"} >
 
-        <Select variant='filled' placeholder='Avalanche' mr={2} />
-        <Select variant='outline' placeholder='Outline' ml={2} />
+        <Select variant='filled' placeholder='Avalanche' mr={1} bgColor={'#242731'} />
+        <Select variant='outline' placeholder='Outline' ml={1} />
 
         </Flex>
        
         <Text color="white" mt={10} mb={1} h={"24px"}>
-          Custom Link
+        <ArrowBackIcon/> Custom Link
         </Text>
         <Text color="white" mt={4} mb={1} h={"48px"}>
         https://testnet.xyz.xyz/trade?ref=
@@ -37,10 +38,10 @@ const RightBar = (props: any) => {
           color="#FFF"
           py={1}
           borderRadius={10}
-          px={4}
+          px={8}
           mx={2}
           >
-          Custom Link
+          <Text fontSize='s'><LinkIcon/> custom link</Text>
         </Button>
 
         <Button
@@ -51,10 +52,11 @@ const RightBar = (props: any) => {
           border={"1px #FFF solid"}
           py={1}
           borderRadius={10}
-          px={4}
+          px={8}
           mx={2}
           >
-          cancel
+
+          <Text fontSize='s'> <LinkIcon/> cancel</Text>
         </Button>
 
           </Flex>
