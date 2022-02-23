@@ -14,6 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Next.js
 - Chakra-UI
 - TypeScript
+
 Project bootstrapped with `create-next-app`.
 
 Your feedback and contributions are welcome!
