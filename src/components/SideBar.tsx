@@ -1,4 +1,12 @@
-import { Avatar, Button, Flex, Heading, Spacer, Stack } from "@chakra-ui/react";
+import {
+  Avatar,
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Spacer,
+  Stack,
+} from "@chakra-ui/react";
 import {
   FiBriefcase,
   FiCalendar,
@@ -14,37 +22,30 @@ import ThemeToggle from "./ThemeToggle";
 
 const SideBar = () => {
   return (
-    <Flex flexDir="column" alignItems="center" minW={["220px"]}>
-      <Flex
-        flexDir="column"
-        // h={"100%"}
-        justifyContent="space-between"
-      >
-        <Flex flexDir="column" as="nav">
-          <Flex flexDir="row" mt={50}>
-            <Flex mr="8px">
-              <Avatar size="md" bg="blue.500" textColor="white" name="Name" />
-            </Flex>
-            <Flex>
-              <Heading
-                fontSize={["3xl"]}
-                alignSelf="center"
-                letterSpacing="tight"
-              >
-                Name
-              </Heading>
-            </Flex>
+    <Flex flexDir="column" minW={["220px"]} ml="1em">
+      <Flex flexDir="column" justifyContent="space-between" justify="center">
+        <Flex flexDir="row" mt={50}>
+          <Flex mr="8px">
+            <Avatar size="md" bg="blue.500" textColor="white" name="Name" />
+          </Flex>
+          <Flex>
+            <Heading
+              fontSize={["2xl"]}
+              alignSelf="center"
+              letterSpacing="tight"
+            >
+              Name
+            </Heading>
           </Flex>
         </Flex>
       </Flex>
 
       <Flex
         flexDir="column"
-        w="80%"
+        w="90%"
         alignItems={"flex-start"}
         as="nav"
-        pt={4}
-        ml={"12px"}
+        mt="3em"
       >
         <NavItem icon={FiHome} title="Home" />
         <NavItem icon={FiCalendar} title="Section 1" />
@@ -57,7 +58,7 @@ const SideBar = () => {
         <NavItem icon={FiSettings} title="Section 8" />
       </Flex>
       <Spacer />
-      <Stack spacing={2} direction="row" align="left" mb="8px">
+      <Stack spacing="4px" direction="row" align="left" mb="8px" ml="1em">
         <Button size="xs">
           <Avatar
             size="2xs"
@@ -70,19 +71,12 @@ const SideBar = () => {
         </Button>
         <Button size="xs">Buy xyz</Button>
       </Stack>
-      <Stack spacing={2} direction="row" align="left" mb="8px" justify="left">
-        {/* <Flex
-          direction={"row"}
-          justifyContent="flex-start"
-          mx={"20%"}
-          gap="8px"
-        > */}
-          <Button size="xs">
-            <FiGlobe />
-          </Button>
-          <ThemeToggle />
-        {/* </Flex> */}
-      </Stack>
+      <HStack spacing="4px" justify="left" mb="8px" ml="1em">
+        <Button size="xs">
+          <FiGlobe />
+        </Button>
+        <ThemeToggle />
+      </HStack>
     </Flex>
   );
 };
