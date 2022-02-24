@@ -33,15 +33,15 @@ const Middle = ({ data }: any) => {
           "none",
           "none",
           "0px solid #242731",
-          "2px solid #242731",
-          "2px solid #242731",
+          "1px solid #242731",
+          "1px solid #242731",
         ]}
         borderRight={[
           "none",
           "none",
           "0px solid #242731",
-          "2px solid #242731",
-          "2px solid #242731",
+          "1px solid #242731",
+          "1px solid #242731",
         ]}
         css={{
           "&::-webkit-scrollbar": {

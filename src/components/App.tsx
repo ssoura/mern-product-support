@@ -9,10 +9,7 @@ import useSWR from "swr";
 import Middle from "./Middle";
 
 export default function App() {
-  const [display, changeDisplay] = useState("hide");
-  const [value, changeValue] = useState(1);
 
-  const { toggleColorMode } = useColorMode();
 
   const bg = useColorModeValue("#ffffff", "#020202");
   const color = useColorModeValue("020202", "#ffffff");
@@ -22,8 +19,7 @@ export default function App() {
     await axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(address, fetcher);
 
-  // if (error) return <div>Failed to load</div>;
-  // if (!data) return <div>Loading...</div>;
+  if (error) return <div>Failed to load</div>;
 
   return (
     <>
@@ -49,7 +45,7 @@ export default function App() {
         pt={"24px"}
       >
         <SideBar />
-        <Middle data={data} />
+        <Middle data={data}/>
         <RightBar data={data} />
       </Flex>
     </>
