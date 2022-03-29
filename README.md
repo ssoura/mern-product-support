@@ -1,4 +1,4 @@
-# Support-ticket App
+# Support-ticket
 
 
 ## Usage
