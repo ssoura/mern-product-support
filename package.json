@@ -1,25 +1,33 @@
 {
   "name": "support-ticket",
   "version": "1.0.0",
-  "description": "Support-ticket app",
-  "main": "server.js",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  
+  ],
   "scripts": {
-    "start": "node src/server.js",
-    "server": "nodemon src/server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "concurrently": "^7.0.0",
-    "dotenv": "^11.0.0",
-    "express": "^4.17.2",
-    "express-async-handler": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.6"
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\" "
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+    "eslint": "^8.11.0",
+    "prettier": "^2.6.0",
+    "turbo": "^1.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssoura/support-ticket.git"
+  },
+  "author": "Sourabh Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssoura/support-ticket/issues"
+  },
+  "homepage": "https://github.com/ssoura/support-ticket#readme"
 }
