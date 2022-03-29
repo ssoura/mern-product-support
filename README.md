@@ -5,7 +5,7 @@
 
 ### Set Environment Variables
 
-- CDto apps/server
+- CD to apps/server
 - Rename the .env.example to .env
 - Add your [MongoDB](https://www.mongodb.com/) database URI
 - Add your JWT secret
