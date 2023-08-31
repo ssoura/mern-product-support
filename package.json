@@ -1,33 +1,18 @@
 {
-  "name": "support-ticket",
-  "version": "1.0.0",
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  },
+  "name": "mern-support-ticket",
   "description": "",
-  "private": true,
-  "workspaces": [
-    "apps/*"
-  
-  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\" "
+    "server": "cd server && npm install && npm start",
+    "client": "cd client && npm install && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
-  "devDependencies": {
-    "eslint": "^8.11.0",
-    "prettier": "^2.6.0",
-    "turbo": "^1.1.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ssoura/support-ticket.git"
-  },
-  "author": "Sourabh Shukla",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ssoura/support-ticket/issues"
-  },
-  "homepage": "https://github.com/ssoura/support-ticket#readme"
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
