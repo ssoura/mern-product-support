@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userSchema = mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -15,10 +15,15 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a password'],
     },
-    isAdmin: {
+    roles: [
+      {
+        type: String,
+        default: 'Employee',
+      },
+    ],
+    active: {
       type: Boolean,
-      required: true,
-      default: false,
+      default: true,
     },
   },
   {
